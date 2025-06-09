@@ -12,7 +12,7 @@ def get_exchange_rate(base_currency, target_currency):
     url = base_url + base_currency
     response = requests.get(url) # fetching the data from the api
 
-    if response.status_code == 200:
+    if response.status_code == 200: # 200 means everything is working well
         data = response.json() # convert the data from the api from JSON format to a python dictionary to enable easy access
         exchange_rate = data['conversion_rates'][target_currency] # gets all of the nestes conversion rates-'conversion_rates', gets the specific rate for that currency-target_currency 
         return exchange_rate
